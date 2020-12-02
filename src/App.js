@@ -1,10 +1,10 @@
 import React, { useState }  from 'react';
 import Grid from '@material-ui/core/Grid';
 import './App.css';
-import HomeTwoToneIcon from '@material-ui/icons/HomeTwoTone';
 import ContactMailTwoToneIcon from '@material-ui/icons/ContactMailTwoTone';
 import SettingsTwoToneIcon from '@material-ui/icons/SettingsTwoTone';
-import Home from './components/home/Home';
+import ChatTwoToneIcon from '@material-ui/icons/ChatTwoTone';
+import Chat from './components/chat/Chat';
 import Contacts from './components/contacts/Contacts';
 import Settings from './components/settings/Settings';
 
@@ -21,15 +21,15 @@ function App() {
         container
         spacing={3}>
         <Grid item xs={3}
-          className="chat-list">
+          className="left-panel">
           <div className="chat-list-body">
-            {visibleList === 'home' && <Home />}
+            {visibleList === 'home' && <Chat />}
             {visibleList === 'contacts' && <Contacts />}
             {visibleList === 'settings' && <Settings />}
           </div>
-          <div className="chat-list-menu">
+          <div className="left-panel-menu">
             <div className="icon-menu" onClick={()=>{handleClickIcon('home')}}>
-              <HomeTwoToneIcon></HomeTwoToneIcon>
+              <ChatTwoToneIcon></ChatTwoToneIcon>
             </div>
             <div className="icon-menu" onClick={()=>{handleClickIcon('contacts')}}>
               <ContactMailTwoToneIcon></ContactMailTwoToneIcon>

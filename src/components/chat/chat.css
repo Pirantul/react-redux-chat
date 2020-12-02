@@ -1,0 +1,12 @@
+.chat-list {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.chat-list-item {
+    list-style-type: none;
+}
+.chat-list-item:hover {
+
+    background-color: #cccedd;
+}

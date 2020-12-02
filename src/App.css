@@ -13,14 +13,19 @@
   background-color: rgb(184, 180, 180);
 }
 
-.chat-list {
+.left-panel {
   display: grid;
+  padding: 0 !important;
+  background-color: #e6ebf5;
 }
 
-.chat-list-menu {
+
+.left-panel-menu {
   align-self: end;
   display: flex;
+  padding: 5px;
   justify-content: space-around;
+  background-color: #b3b9c5;
 }
 
 .icon-menu:hover {
