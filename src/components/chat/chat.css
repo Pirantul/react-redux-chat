@@ -1,12 +1,43 @@
 .chat-list {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 20px;
 }
 
 .chat-list-item {
     list-style-type: none;
+    background-color: #444753;
+
 }
 .chat-list-item:hover {
+    background-color: #6A6C75;
+}
 
-    background-color: #cccedd;
+.clearfix {
+    padding: 20px;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+    height: 0;
+}
+
+.about {
+    float: left;
+    margin-top: 8px;
+    padding-left: 8px;
+}
+  
+.status {
+  color: #92959E;
+}
+
+img {
+    float: left;
+  }
+
+.name {
+    color: cornsilk;
 }

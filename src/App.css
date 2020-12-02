@@ -1,4 +1,10 @@
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato'), url(./fonts/Lato/Lato-Regular.ttf) format('truetype');
+}
+
 .App {
+  font-family: Lato, serif;
   position: relative;
   text-align: center;
   width: 100%;
@@ -16,7 +22,8 @@
 .left-panel {
   display: grid;
   padding: 0 !important;
-  background-color: #e6ebf5;
+  background-color: #444753;
+  
 }
 
 
