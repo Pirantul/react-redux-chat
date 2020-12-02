@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 
 // const store = createStore(reducer);
 
-ReactDOM.hydrate(
+ReactDOM.render(
   <React.StrictMode>
     {/* <Provider store={store}> */}
       <App />
