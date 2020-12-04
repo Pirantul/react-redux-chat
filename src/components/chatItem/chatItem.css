@@ -1,0 +1,37 @@
+
+.chat-list-item {
+    display: flex;
+    justify-content: space-around;
+    background-color: #444753;
+    padding: 5px;
+}
+
+.chat-list-item:hover {
+    background-color: #6A6C75;
+    cursor: pointer;
+}
+
+.chat-list-item-avatar {
+    height: 50px;
+    border-radius: 50%;
+
+}
+
+.chat-list-item-name {
+    color: ivory;
+}
+
+.chat-list-item-status {
+    font-size: .7rem;
+    color: rgb(28, 196, 28);
+}
+
+.chat-list-item-message-icon {
+    height: 32px;
+    width: 32px;
+    font-size: .7rem;
+    padding-top: 2px;
+    color: ivory;
+    background-image: url(../../icons/chat.png);
+    background-repeat: no-repeat;
+}

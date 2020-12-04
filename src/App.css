@@ -11,22 +11,18 @@
   height: 100%;
 }
 
-.grid-container {
+.container {
+  display: flex;
   height: 100%;
-}
-
-.chat-room {
-  background-color: rgb(184, 180, 180);
 }
 
 .left-panel {
   display: grid;
-  padding: 0 !important;
   background-color: #444753;
-  
+  width: 300px;
 }
 
-h2 {
+h1, h2, h3 {
   color: aliceblue;
 }
 
@@ -38,6 +34,8 @@ h2 {
   background-color: #b3b9c5;
 }
 
-.icon-menu:hover {
-  cursor: pointer;
+@media (max-width: 700px) {
+  .left-panel {
+    width: 100%;
+  }
 }

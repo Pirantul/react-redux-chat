@@ -1,51 +1,43 @@
-import React, { useState }  from 'react';
-import Grid from '@material-ui/core/Grid';
+import React from 'react';
+import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 import './App.css';
-import ContactMailTwoToneIcon from '@material-ui/icons/ContactMailTwoTone';
-import SettingsTwoToneIcon from '@material-ui/icons/SettingsTwoTone';
-import ChatTwoToneIcon from '@material-ui/icons/ChatTwoTone';
-import Chat from './components/chat/Chat';
-import Contacts from './components/contacts/Contacts';
-import Settings from './components/settings/Settings';
+import Chat from './components/pages/chat/Chat';
+import Contacts from './components/pages/contacts/Contacts';
+import Settings from './components/pages/settings/Settings';
+import MenuIcons from './components/menuIcons/MenuIcons';
+import ChatBody from './components/chatBody/ChatBody';
 
 function App() {
-  const [visibleList, setVisibleList] = useState('home');
-
-  const handleClickIcon = (setVisible) => {
-    setVisibleList(setVisible)
-  }
 
   return (
-    <div className="App">
-      <Grid className="grid-container"
-        container
-        spacing={3}>
-        <Grid item xs={3}
-          className="left-panel">
-          <div className="chat-list-body">
-            {visibleList === 'home' && <Chat />}
-            {visibleList === 'contacts' && <Contacts />}
-            {visibleList === 'settings' && <Settings />}
+    <Router>
+      {document.location.pathname === '/' ? <Redirect from='/' to="/chat" /> : null }
+      <div className="App">
+        <div className="container">
+          <div className="left-panel">
+            <div className="left-panel-chat-list-body">
+            <Switch>
+                <Route path='/chat'>
+                  <Chat />
+                </Route>
+                <Route path='/contacts'>
+                  <Contacts />
+                </Route>
+                <Route path='/settings'>
+                  <Settings />
+                </Route>
+              </Switch>
+            </div>
+            <div className="left-panel-menu">
+              <MenuIcons />
+            </div>
           </div>
-          <div className="left-panel-menu">
-            <div className="icon-menu" onClick={()=>{handleClickIcon('home')}}>
-              <ChatTwoToneIcon></ChatTwoToneIcon>
-            </div>
-            <div className="icon-menu" onClick={()=>{handleClickIcon('contacts')}}>
-              <ContactMailTwoToneIcon></ContactMailTwoToneIcon>
-            </div>
-            <div className="icon-menu" onClick={()=>{handleClickIcon('settings')}}>
-              <SettingsTwoToneIcon></SettingsTwoToneIcon>
-            </div>
-          </div>
-        </Grid>
-        <Grid item xs={9}
-          className="chat-room">
-
-        </Grid>
-      </Grid>
-    </div>
-
+          <Route path='/chat/:id'>          
+            <ChatBody />
+          </Route>
+        </div>
+      </div>
+    </Router>
   );
 }
 
