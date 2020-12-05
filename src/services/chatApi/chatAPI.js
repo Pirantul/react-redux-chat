@@ -7,7 +7,8 @@ const chatApi = {
             avatar: "http://emilcarlsson.se/assets/harveyspecter.png",
             online: true,
             unreadMessage: 2,
-            messages: ['Hi', 'How are you?']
+            incommingMessages: ['Hi', 'How are you?'],
+            outgoingMessages: ["I'am", 'How are you?']
         },
         {
             id: 2,
@@ -15,7 +16,8 @@ const chatApi = {
             avatar: "http://emilcarlsson.se/assets/louislitt.png",
             online: false,
             unreadMessage: 1,
-            messages: ['Hello', 'How are you?']
+            incommingMessages: ['Hello', 'How are you?'],
+            outgoingMessages: ['Hi', 'How are you?']
         },
         {
             id: 3,
@@ -23,7 +25,8 @@ const chatApi = {
             avatar: "http://emilcarlsson.se/assets/rachelzane.png",
             online: true,
             unreadMessage: 0,
-            messages: ["I'am", 'How are you?']
+            incommingMessages: ["I'am", 'How are you?'],
+            outgoingMessages: ['Hello', 'Come on']
         },
         {
             id: 4,
@@ -31,7 +34,8 @@ const chatApi = {
             avatar: "http://emilcarlsson.se/assets/donnapaulsen.png",
             online: true,
             unreadMessage: 5,
-            messages: ['Cool', 'Fine']
+            incommingMessages: ['Cool', 'Fine'],
+            outgoingMessages: ['Exellent!', "Let's go" ]
         },
         {
             id: 5,
@@ -39,7 +43,8 @@ const chatApi = {
             avatar: "http://emilcarlsson.se/assets/jessicapearson.png",
             online: false,
             unreadMessage: 4,
-            messages: ['Exellent!', "Let's go" ]
+            incommingMessages: ['Exellent!', "Let's go" ],
+            outgoingMessages: ['Hi', 'How are you?']
         },
         {
             id: 6,
@@ -47,9 +52,15 @@ const chatApi = {
             avatar: "http://emilcarlsson.se/assets/haroldgunderson.png",
             online: false,
             unreadMessage: 0,
-            messages: ['Hello', 'Come on']
+            incommingMessages: ['Hello', 'Come on'],
+            outgoingMessages: ['Cool', 'Fine']
         }
-    ]
+    ],
+    all: function() {return this.chatUsers},
+    getUser: function(id) {
+        const isUser = user => user.id === +id;
+        return this.chatUsers.find(isUser);
+    }
 }
 
 export default chatApi

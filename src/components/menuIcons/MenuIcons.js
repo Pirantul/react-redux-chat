@@ -7,7 +7,7 @@ import MenuIconSettings from '../../icons/settings.png';
 const MenuIcons = () => {
     return (
         <>
-            <NavLink to='/'>
+            <NavLink to='/chat'>
                 <img src={MenuIconChat} className="icon-menu" />
             </NavLink> 
             <NavLink to='/contacts'>

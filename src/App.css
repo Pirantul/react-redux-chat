@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Lato';
-  src: local('Lato'), url(./fonts/Lato/Lato-Regular.ttf) format('truetype');
+  src: local('Lato'), url(./fonts/Lato/Lato-Light.ttf) format('truetype');
 }
 
 .App {
@@ -20,6 +20,11 @@
   display: grid;
   background-color: #444753;
   width: 300px;
+}
+
+.right-panel {
+  width: 100%;
+  background-color: rgb(199, 206, 207);
 }
 
 h1, h2, h3 {

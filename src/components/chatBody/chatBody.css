@@ -1,3 +1,7 @@
+.chat-body {
+    width: 100%;
+}
+
 .h2body {
-    color: lightslategray;
+    color: rgb(66, 76, 90);
 }

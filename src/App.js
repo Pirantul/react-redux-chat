@@ -32,9 +32,11 @@ function App() {
               <MenuIcons />
             </div>
           </div>
-          <Route path='/chat/:id'>          
-            <ChatBody />
-          </Route>
+          <div  className="right-panel">
+            <Route path='/chat/:id'>          
+              <ChatBody />
+            </Route>
+          </div>
         </div>
       </div>
     </Router>
