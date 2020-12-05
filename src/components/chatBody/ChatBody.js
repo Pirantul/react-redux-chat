@@ -13,8 +13,14 @@ const ChatBody = (props) => {
         <div className="chat-body">
             <h2 className='h2body'>{user.name}</h2>
             <br />
-            <p>{user.incommingMessages[0]}</p>
-            <p>{user.outgoingMessages[1]}</p>
+            <div className="chat-body-container">
+                {chatAPI.getUserMessages(id).map(msg => (
+                    <p className={msg.direction === 'incomming' ? 
+                    'incomming-message' :
+                    'outgoing-message'}>
+                    {msg.text}</p>
+                ))}
+            </div>
         </div>
         )
 }

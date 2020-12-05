@@ -19,7 +19,7 @@
 .left-panel {
   display: grid;
   background-color: #444753;
-  width: 300px;
+  min-width: 300px;
 }
 
 .right-panel {

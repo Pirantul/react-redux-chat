@@ -2,6 +2,7 @@ import React from 'react';
 import {NavLink } from 'react-router-dom';
 import * as actions from '../../actions';
 import {useDispatch, useSelector} from 'react-redux';
+import chatAPI from '../../services/chatApi/chatAPI';
 import './chatItem.css';
 
 const ChatItem = ({user}) => {
@@ -24,7 +25,7 @@ const ChatItem = ({user}) => {
                     }</div>
                 </div>
                 <div className="chat-list-item-message-icon">
-                    {user.unreadMessage}
+                    {chatAPI.getMessageCount(user.id)}
                 </div>
             </div>
         </NavLink>
