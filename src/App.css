@@ -18,29 +18,73 @@
 
 .left-panel {
   display: grid;
+  overflow: scroll;
   background-color: #444753;
   min-width: 300px;
 }
 
+.chat-list {
+  
+}
+
+.chat-input-wrapper {
+  position: fixed;  
+  display: flex;
+  bottom: 0;
+  left: 300px;
+  height: 50px;
+  width: 100%;
+  background-color: #b3b9c5;
+}
+
+.chat-input {
+  font-family: Lato, serif;
+  margin: 10px;
+  width: 600px;
+}
+
 .right-panel {
+  overflow: scroll;
   width: 100%;
   background-color: rgb(199, 206, 207);
+}
+
+.btn-send {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  margin: 5px;
+  border-radius: 50%;
+  background-image: url('./icons/send.png');
+}
+
+.btn-send:hover {
+  cursor: pointer;
 }
 
 h1, h2, h3 {
   color: aliceblue;
 }
 
-.left-panel-menu {
-  align-self: end;
+.left-menu {
+  /* align-self: end; */
   display: flex;
-  padding: 5px;
+  position: fixed;
+  box-sizing: border-box;
+  width: 300px;
+  bottom: 0;
+  height: 50px;
+  padding: 7px;
   justify-content: space-around;
   background-color: #b3b9c5;
 }
 
 @media (max-width: 700px) {
-  .left-panel {
+  .left-panel, .left-menu {
     width: 100%;
+  }
+
+  .right-panel, .chat-input-wrapper {
+    display: none;
   }
 }

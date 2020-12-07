@@ -6,8 +6,13 @@ import Contacts from './components/pages/contacts/Contacts';
 import Settings from './components/pages/settings/Settings';
 import MenuIcons from './components/menuIcons/MenuIcons';
 import ChatBody from './components/chatBody/ChatBody';
+import {useDispatch, useSelector} from 'react-redux';
+import * as actions from './actions';
 
 function App() {
+  const dispatch = useDispatch();
+  const activeUser = useSelector((state) => state.activeUser); 
+  const inputChatText = useSelector((state)=> state.inputChat);
 
   return (
     <Router>
@@ -28,14 +33,24 @@ function App() {
                 </Route>
               </Switch>
             </div>
-            <div className="left-panel-menu">
-              <MenuIcons />
-            </div>
+            
           </div>
           <div  className="right-panel">
             <Route path='/chat/:id'>          
               <ChatBody />
             </Route>
+            
+          </div>
+          
+        </div>
+        <div>
+          <div className="left-menu">
+              <MenuIcons />
+            </div>
+          <div className="chat-input-wrapper">
+              <input className="chat-input" />
+              {/* <button className="btn-send" onClick={()=>{dispatch(actions.inputChatText(activeUser, inputChatText))}} /> */}
+              <button className="btn-send" />
           </div>
         </div>
       </div>
